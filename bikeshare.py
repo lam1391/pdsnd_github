@@ -17,22 +17,20 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    cityB = True
-    while cityB == True :
-        city = input("city?")
-        if city.lower() == "chicago" or city.lower()  == "new york city" or city.lower() == "washington" :
-            cityB = False
-        else:
+	city =''
+    while city not in CITY_DATA.keys():
+        city = input("which city do you like check out Chicago, New York or whashington?").lower()
+        if city not in CITY_DATA.keys():
             print("\nI don't understand that city, please try again.\n")
                 
 
     # TO DO: get user input for month (all, january, february, ... , june)
     monthB = True
     while monthB == True :
-        month = input("month?")
+        month = input("which month do you like to choose?").lower()
         
-        
-        if month.lower() == "all"   or month.lower()  == "january" or month.lower() == "february" or month.lower() == "march" or month.lower()              == "april"   or month.lower() == "may" or month.lower() == "june"  or month.lower()  == "july"    or month.lower() == "agost" or                  month.lower() == "september" or month.lower()  == "october" or month.lower() == "november" or month.lower() == "Dicember" :
+        Month_data ={'all':1,'january':2,'february':3,'march':4,'april':5,'may':6,'june':7,'july':8}
+        if month in month_data.keys():
             monthB = False
         else:
             print("\nI don't understand that month, please try again.\n")
@@ -41,7 +39,7 @@ def get_filters():
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     dayB = True
     while dayB == True :
-        day = input("day?")
+        day = input("which day do you like to choose?")
         if day.lower() == "all" or day.lower() == "monday" or day.lower() == "tuesday" or day.lower() == "wendesday" or day.lower() == "thrusday"             or day.lower() == "friday" or day.lower() == "saturday" or day.lower() == "sunday":
             dayB = False
         else:
