@@ -79,7 +79,7 @@ def load_data(city, month, day):
     return df
 
 def display(df):
-    
+    #show raw data 5 line by 5
     BIN_RESPONSE_LIST = ['yes', 'no']
     viewdata = ''
     
