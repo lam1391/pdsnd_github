@@ -27,10 +27,10 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     monthB = True
     while monthB == True :
-        month = input("which month do you like to choose?")
+        month = input("which month do you like to choose?").lower()
         
-        
-        if month.lower() == "all"   or month.lower()  == "january" or month.lower() == "february" or month.lower() == "march" or month.lower()              == "april"   or month.lower() == "may" or month.lower() == "june"  or month.lower()  == "july"    or month.lower() == "agost" or                  month.lower() == "september" or month.lower()  == "october" or month.lower() == "november" or month.lower() == "Dicember" :
+        Month_data ={'all':1,'january':2,'february':3,'march':4,'april':5,'may':6,'june':7,'july':8}
+        if month in month_data.keys():
             monthB = False
         else:
             print("\nI don't understand that month, please try again.\n")
